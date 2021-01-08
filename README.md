@@ -13,6 +13,7 @@
     * 有些mod实际上是大版本通用的，但是现在的做法是匹配到具体的小版本，所以会出现找不到的情况……
 ## 用法
 * 修改 *config.yml* 文件。
+    * 修改 *multimc_dir*，程式0.getinstances即可讀取實例資料夾，或是使用下面兩個步驟。
     * 修改 *version* 项，默认为 1.12.2。
     * 修改 *origin_mod_dir* 项，内容为自己的游戏mod目录，形如 *F:\Game\MultiMC\instances\BWEA\.minecraft\mods* 。
 * 运行 *1.列出mod表格.bat*

@@ -1,6 +1,7 @@
 version: 1.12.2
 project_url_root: https://www.curseforge.com/minecraft/mc-mods
 forge_storage_url_root: https://media.forgecdn.net/files
+multimc_dir: F:\Game\MultiMC
 origin_mod_dir: F:\Game\MultiMC\instances\BWEA\.minecraft\mods
 mod_list: mod_list.txt
 project_list: project_list.txt
