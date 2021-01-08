@@ -5,7 +5,8 @@ import zipfile
 import yaml
 import re
 import csv
-
+import argparse
+from pathlib import Path
 
 error_list = []
 project_list = []
@@ -15,11 +16,20 @@ project_list = []
 origin_mod_dir: 游戏mod目录
 mod_list: 数据文件
 """
-with open('config.yml', 'r') as f:
+
+parser = argparse.ArgumentParser()
+parser.add_argument('-c','--config', nargs='?', const=1, type=str,default='config.yml',help='config file name')
+args = parser.parse_args()
+print(args)
+
+config_path = Path(args.config).expanduser()
+with open(config_path, 'r') as f:
     config = yaml.load(f)
     origin_mod_dir = config['origin_mod_dir']
     mod_list =  config['mod_list']
 
+print(origin_mod_dir)
+origin_mod_dir = Path(origin_mod_dir).expanduser()
 if os.path.exists(origin_mod_dir):
     files = os.listdir(origin_mod_dir)
     for f in files:
