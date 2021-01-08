@@ -30,11 +30,11 @@ with open(config_path, 'r') as f:
 
 print(origin_mod_dir)
 origin_mod_dir = Path(origin_mod_dir).expanduser()
-if os.path.exists(origin_mod_dir):
+if origin_mod_dir.is_dir():
     files = os.listdir(origin_mod_dir)
     for f in files:
         if f.endswith('.jar'):
-            zf = zipfile.ZipFile(origin_mod_dir + '/' + f)
+            zf = zipfile.ZipFile(origin_mod_dir.joinpath(f))
             if 'mcmod.info' in zf.namelist():
                 mcmod_info_text = zf.open('mcmod.info').read()
                 zf.close()
